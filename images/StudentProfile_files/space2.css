@@ -63,6 +63,12 @@
 #check{
     display:none;
 }
+.infor-tags{
+    font-size: 25px;
+    font-weight: 700;
+    border:2px solid  red;
+}
+
 
 
 

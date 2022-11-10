@@ -4,9 +4,12 @@
     $db_handle = new DBController();
     $conn = $db_handle->connectDB();
    
-
-    $subjects = "select * from subjects";
-    $result = mysqli_query($conn,$subjects);
+    $studentId = $_SESSION['user-data']['id'];
+    $subjects = "select subjects.id, subjects.name, "
+        . "(SELECT score FROM student_subject WHERE student_subject.subject_id = subjects.id AND student_subject.student_id = {$studentId}) as score, "
+        . "(SELECT COUNT(*) FROM exam_questions WHERE subjects.id = exam_questions.subject_id) as questions_count "
+        . "FROM subjects ORDER BY subjects.name ASC";    
+    $result = mysqli_query($conn, $subjects);
 ?>
 
 <!DOCTYPE html>
@@ -30,43 +33,74 @@
             <!-- <div class="subject1"> -->
          
             <div class="subject2">
-                <div>
-                <table class="table"  >
-                    <thead >
-                        <tr>
-                            <th colspan="4" class="table_title"> <p class="registered">VIEW RESULTS</p></th>
-                            
-                        </tr>
-                    </thead>
-                    <tr class="table_head">
-                        <th class="table_head">Exam name</th>
-                        <th class="table_head">TOTAL</th>
-                        <th class="table_head">GRADE</th>
-                     
-                     
-                    </tr>
-                    <tr align="center" class="details" >
-                       <?php
-                        while($row = mysqli_fetch_assoc ($result))
-                        {
-                        ?>
-                       <td  class="details"><?php echo $row['name']; ?></td>
-                       <td  class="details"><?php echo $row['duration']; ?></td>
-                       <td  class="details"><?php echo $row['duration']; ?></td>
+                <div class="bigresult">
+                    <table class="table"  >
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="table_title"> <p class="registered">VIEW RESULTS</p></th>
+                            </tr>
+                            <tr class="table_head">
+                                <th class="table_head">Subject</th>
+                                <th class="table_head">TOTAL</th>
+                                <th class="table_head">GRADE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr align="center" class="details">
+                            <?php
+                                while($row = mysqli_fetch_assoc ($result))
+                                {
+                                ?>
+                                <td class="details"><?php echo $row['name']; ?></td>
+                                <td class="details">
+                                    <?php 
+                                        $score = $row['score'];
 
-                       
-                    
+                                        echo !is_null($score) ? ($score . ' / ' . $row['questions_count']) : 'not taken';
+                                    ?>
+                                </td>
+                                <td class="details">
+                                    <?php
+                                        try{
+                                            if( is_null ($score) ){
+                                                echo 'no score';
 
+                                            }
+                                            else{
 
-
-                        </tr>
-                        <?php
-
-                        }
-
-                       ?>
-                    </tr>
-                </table>
+                                                $percentage = ($score / $row['questions_count']) * 100;
+                                                // echo $percentage;
+                                                if($percentage >= 80){
+                                                    echo '<div style="color:green; font-size:20px; font-weight:700;">A</div>';
+                                                }
+                                                elseif($percentage >= 60 && $percentage < 80){
+                                                    echo '<div style="color:green-yellow; font-size:20px; font-weight:700;">B</div>';
+                                                }
+                                                elseif($percentage >= 50 && $percentage < 60){
+                                                    echo '<div style="color:brown; font-size:20px; font-weight:700;">C</div>';
+                                                }
+                                                elseif($percentage >= 40 && $percentage < 50){
+                                                    echo '<div style="color:orange; font-size:20px; font-weight:700;">D</div>';
+                                                }
+                                                else{
+                                                    echo '<div style="color:red; font-size:20px; font-weight:700;">F</div>';
+                                                }
+                                            }
+                                        }
+                                        catch(DivisionByZeroError $e){
+                                            echo 'grade shows here';
+                                        }
+                                    
+                                        // grade shows here
+                                    ?>
+                                </td>
+                                </tr>
+                                <?php
+                                }
+                            ?>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                
             </div>

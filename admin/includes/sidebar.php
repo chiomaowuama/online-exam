@@ -12,7 +12,7 @@
                 <a>
                 <ul>
                     <li><p><a href="../admin/newhomeadmin.php">profile</a></p></li>
-                    <li>change password</li>
+                    <li><p><a href="../admin/changepassword.php"> change password</a></p></li>
                     <li><a href="./actions/logout.php">logout</a></li>
                 </ul>
             </li>
@@ -27,7 +27,7 @@
                 <ul>
                     <li><p><a href="../admin/adminsubject.php">Add Subject</a></p></li>
                     <li><p><a href="../admin/addquestion.php">Add options</a></p></li>
-                    <li><p>Remove Subject</p></li>
+                    <li><p> <a href="../admin/viewstudents_result.php">StudentsResult</a></p></li>
                     <li><p>Add Exam_question</p></li>
                 </ul>
             </li>

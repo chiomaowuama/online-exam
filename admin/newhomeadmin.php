@@ -76,7 +76,7 @@ require_once __DIR__  . '/includes/db.php';
                 <table class="table"  >
                     <thead >
                         <tr>
-                            <th colspan="4" class="table_title"> <p class="registered">Registered students </p></th>
+                            <th colspan="5" class="table_title"> <p class="registered">Registered students </p></th>
                             <th class="view"><a href="">View All</a> </th>
                             
                         </tr>
@@ -84,6 +84,7 @@ require_once __DIR__  . '/includes/db.php';
                     <tr class="table_head">
                         <th class="table_head">Reg No:</th>
                         <th class="table_head">Name</th>
+                        <th class="table_head">Surnname</th>
                         <th class="table_head">Email</th>
                         <th class="table_head">Reg Date</th>
                      
@@ -95,7 +96,7 @@ require_once __DIR__  . '/includes/db.php';
                         ?>
                        <td  class="details"><?php echo $row ['id']; ?></td>
                        <td  class="details"><?php echo $row ['firstname']; ?></td>
-                       <td  class="details"><?php echo $row ['firstname']; ?></td>
+                       <td  class="details"><?php echo $row ['sname']; ?></td>
                        <td  class="details"><?php echo $row ['email']; ?></td>
                     
 
@@ -114,7 +115,7 @@ require_once __DIR__  . '/includes/db.php';
                 <table class="table"  >
                     <thead >
                         <tr>
-                            <th colspan="4" class="table_title"> <p class="registered">Registered students </p></th>
+                            <th colspan="4" class="table_title"> <p class="registered">Registered Admin </p></th>
                             <th class="view"><a href="">View All</a> </th>
                             
                         </tr>

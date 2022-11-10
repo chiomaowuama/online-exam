@@ -8,27 +8,25 @@
     $student_id = $_SESSION['user-data']['id'];
     $subjectid = $_GET['subject_id'];
 
-    if(!isset($subjectid)){
-        header('location:studentexam.php ');
+    if(!isset($subjectid) || empty($subjectid)) {
+        header('location:studentexam.php');
     }
-   
 
-    $subjects ="SELECT exam_questions.id,exam_questions.question,subjects.name FROM exam_questions INNER JOIN subjects ON exam_questions.subject_id = subjects.id WHERE exam_questions.subject_id = $subjectid";
-    $result = mysqli_query($conn,$subjects);
-    $rows = mysqli_fetch_all($result,MYSQLI_ASSOC);
+    $questionsQuery ="SELECT exam_questions.id, exam_questions.question, subjects.name FROM exam_questions INNER JOIN subjects ON exam_questions.subject_id = subjects.id WHERE exam_questions.subject_id = {$subjectid} ORDER BY RAND()";
+    $result = mysqli_query($conn, $questionsQuery);
+    $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
     
-    if(count($rows)< 1){
-        die("Ther is no ongoing Exam for this subject please try again later");
-        header('location:studentprofile.php ');
-        
+    if(count($rows) < 1) {
+        die("There is no ongoing Exam for this subject please try again later");
+        header('location:studentprofile.php');
     }
+
     $subjectname = $rows[0]['name'];
     
     try {
         $studentsubject = "INSERT INTO student_subject(student_id,subject_id) VALUES ($student_id, $subjectid)";
-        $studentresult = mysqli_query($conn,$studentsubject);
-    }
-    catch (\Exception $e) {
+        $studentresult = mysqli_query($conn, $studentsubject);
+    } catch (\Exception $e) {
         die("You have taken this exam already");
     }
    
@@ -37,8 +35,8 @@
     }, $rows);
     $questionIdstring = implode(',', $questionIds);
     $optionsQuery = "SELECT * FROM exam_question_options WHERE exam_question_id IN ($questionIdstring)";
-    $optionsResult = mysqli_query($conn,$optionsQuery);
-    $options = mysqli_fetch_all($optionsResult,MYSQLI_ASSOC);
+    $optionsResult = mysqli_query($conn, $optionsQuery);
+    $options = mysqli_fetch_all($optionsResult, MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -63,10 +61,12 @@
          
             <div class="subject_student">
                 <div class="name_time" >
-                    <div><?php  echo $subjectname; ?></div>
-                    <div id="countdown"></div>
+                    <div class="partone"><?php  echo $subjectname; ?></div>
+                    <div class="parttwo" id="countdown"></div>
                 </div>
-                <form action="saveexamscript.php" method="POST">
+                <form action="saveexamscript.php" id="my_form" method="POST" class="scroll bigscro">
+                    <input type="hidden" name="subject_id" value="<?php echo $subjectid; ?>">
+
                     <?php
                     foreach ($rows as $row) {
                         echo '
@@ -83,7 +83,7 @@
                                 foreach ($questionOptions as $option) {
                                     echo '
                                     <div class="options">
-                                        <input type="radio" name="data['.$row['id'].']" class="checked" value="' . $option['id'] . '" required>
+                                        <input type="radio" name="data['.$row['id'].']" class="checked" value="' . $option['id'] . '">
                                         <p>'.$option["question_option"].'</p>
                                     </div>
                                     ';
@@ -94,7 +94,7 @@
                     }
                     ?>
 
-                    <button type="submit">Submit</button>
+                    <button type="submit" class="examsubmit">Submit</button>
                 </form>
                 
             </div>

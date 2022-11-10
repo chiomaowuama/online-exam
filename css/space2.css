@@ -150,21 +150,21 @@ aside ul li:target:hover{
  .topfix{
     /* border:2px solid red; */
     background-color: white;
-    width:60%;
+    width:90%;
     /* border:2px solid rgba(209, 206, 206, 0.436); */
     box-shadow: 5px 3px 8px 3px #888888;
     border-radius: 14px;
-    margin-left: 3%;
+    margin-left: 5%;
     display: grid;
     /* float: left; */
-    margin-top:1%;
+    margin-top:3%;
     grid-template-columns:1fr 7fr;
     /* justify-content: center; */
     /* align-content: center; */
     padding-top: 10px;
     padding-bottom: 5px;
     font-size: 20px;
-    position: fixed;
+    /* position: fixed; */
     /* color: black; */
     /* font-weight: 500; */
 }
@@ -229,7 +229,7 @@ aside ul li:target:hover{
 /* profilepage */
 .subject2{
     /* border:2px solid green; */
-    margin-top:25%;
+    margin-top:5%;
     /* display:grid; */
     /* grid-template-columns: 60% 40%; */
 }
@@ -238,9 +238,14 @@ aside ul li:target:hover{
     border:2px solid  rgba(209, 206, 206, 0.658);
     width:90%;
     display:grid;
-    grid-template-columns: 30% 70% ;
+    /* grid-template-columns: 30% 70% ; */
     margin-left: auto;
      margin-right: auto;
+}
+.bigresult{
+    /* border:2px solid green; */
+    width:90%;
+    margin-left: 5%;
 }
 .personal_info{
     /* border:2px solid blue; */
@@ -319,7 +324,10 @@ aside ul li:target:hover{
  
 }
 .table_head{
-    border:2px solid  rgba(209, 206, 206, 0.658) ;
+    /* border:2px solid  rgba(209, 206, 206, 0.658) ; */
+    /* border:2px solid red; */
+    font-size: 20px;
+    padding:1% 0;
    
 }
 table,
@@ -345,15 +353,17 @@ td{
     border:2px solid  rgba(209, 206, 206, 0.658) ;
     /* padding-left: 10px;
     padding-right: 10px; */
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 10px;
+    font-weight: 400;
+    font-family: 'poppins';
 }
 
 /* display questsion part */
 .subject_student{
-    border:2px solid green;
+    /* border:2px solid red; */
     widtH:100%;
-    margin-top: 13%;
+    margin-top: 5%;
     margin-left: 5%;
     background-color: white;
     width:90%;
@@ -364,40 +374,146 @@ td{
     padding-bottom: 10px;
     font-size: 20px;
 }
+/* startexam.php?subject_id=1 */
 .name_time{
-    border:2px solid red;
+    /* border:2px solid red; */
+    padding-bottom: 3%;
    display:grid;
    grid-template-columns: 70% 30%;
    font-family: "poppins";
    font-size: 30px;
    font-weight: 600;
 }
+.partone{
+    /* border:2px solid yellow; */
+    padding-left: 20px;
+    font-size: 40px;
+}
 .questions_display{
-    border:2px solid blue;
+    /* border:2px solid blue; */
+    margin-bottom:5%;
 }
 
 .questions{
-    border:2px solid red;
+    /* border:2px solid red; */
+
     font-size: 20px;
     
 }
 .questions p{
-    border:2px solid red;
-    padding-left: 10%;
+    /* border:2px solid red; */
+    padding-left: 2%;
     font-size: 25px;
 }
-.options_answers{
+/* .options_answers{
     border:2px solid yellow;
-}
+} */
 .options{
-    border:2px solid green;
+    /* border:2px solid green; */
     display:flex;
-    padding-left: 3%;
+    padding-top: 2%;
+    padding-left: 5%;
 
 }
 .options p{
-    border:2px solid red;
+    /* border:2px solid red; */
     padding-left:2%;
     font-family: "popping";
     font-size:20px ;
 }
+.submited{
+    border:2px solid green;
+    background-color: green;
+    font-size: 15px;
+    border-radius: 5px;
+    padding:5% 15%;
+}
+.submited a{
+    color:white;
+    outline: none;
+    text-decoration: none;
+}
+.submited:focus,
+.submited:hover{
+    background-color: white;
+    color:green;
+}
+.submited a:hover{
+    color:green;
+ 
+}
+.examsubmit{
+    border:2px solid green;
+    background-color: green;
+    font-size: 15px;
+    border-radius: 5px;
+    color:white;
+    padding:5px 25px;
+    margin-left: 30px;
+    /* margin-top: 10px; */
+}
+.examsubmit a{
+    color:white;
+    outline: none;
+    text-decoration: none;
+
+}
+.examsubmit:hover{
+    background-color: white;
+    color:green;
+}
+.examsubmit a:hover{
+    color:green;
+ 
+}
+/* scrolled exam */
+.scroll{
+    /* height:710px; */
+    overflow:auto;
+    /* border:2px solid red; */
+}
+.scroll::-webkit-scrollbar {
+    width: 5px;
+}
+/* Track */
+.scroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(209, 206, 206, 0.436); 
+    border-radius: 10px;
+}
+   
+  /* Handle */
+.scroll::-webkit-scrollbar-thumb {
+    background:rgba(209, 206, 206, 0.436); 
+    border-radius: 10px;
+    height:5px;
+}
+  
+  /* Handle on hover */
+.scroll::-webkit-scrollbar-thumb:hover {
+    background: white; 
+}
+.bigscro{
+    /* border:2px solid purple; */
+}
+.infor-tags{
+    /* border: 2px solid red; */
+    font-size: 20px;
+    font-weight: 600;
+    font-family: ' poppins';
+}
+.info{
+    font-size: 22px;
+    font-weight: 400;
+    text-align:justify;
+    vertical-align: middle;
+    /* border:2px solid green; */
+}
+.personal_info{
+    border: 2px solid rgba(209, 206, 206, 0.436);
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    font-size: 20px;
+    padding: 2% 0;
+}
+

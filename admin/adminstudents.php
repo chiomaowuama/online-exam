@@ -20,28 +20,28 @@
             <?php include './includes/fixedhead.php';?>
             <div class="subject1">
                 <div class="subject2a">
-                <form class="form1" name="signup" action=" actions/savecandidates.php" method="post" enctype="multipart/form-data" >
-                <h3>Student Sign in</h3>
-                <label for="fname" > Firstname </label>
-                <input type="text" id="fname" class="fname" name="fname" required>
-                <label for="sname"> Lastname </label>
-                <input type="text" id="sname" class="sname" name="sname" required>
-                <label for="gender"> Gender </label>
-                <input type="text" id="gender" class="gender" name="gender" required>
-                <label for="nation"> Nationality</label>
-                <input type="text" id="nation" class="nation" name="nation" required>
-                <label for="phone"> Phone No </label>
-                <input type="phone" id="phoneno" class="phoneno" name="phoneno"required>
-                <label for="email"> Email</label>
-                <input type="text" id="email" class="email" name="email" placeholder="@gmail.com">
-                <label for="password"> Password </label>
-                <input type="password" id="password" class="password" name="password" required>
-                <label for="rpassword">Re-enter </label>
-                <input type="password" id="rpass" class="rpassword iden" name="rpass" required>
-                <label for =" myprofilephoto" > Upload Passport </label>
-				<input type="file" name="myprofilephoto" id="myprofilephoto" required />
-                <button type="submit" class="buttn1">Sign Up </button>     
-            </form>
+                    <form class="form1" name="signup" action=" actions/savecandidates.php" method="post" enctype="multipart/form-data" >
+                        <h3>Student Sign in</h3>
+                        <label for="fname" > Firstname </label>
+                        <input type="text" id="fname" class="fname" name="fname" required>
+                        <label for="sname"> Lastname </label>
+                        <input type="text" id="sname" class="sname" name="sname" required>
+                        <label for="gender"> Gender </label>
+                        <input type="text" id="gender" class="gender" name="gender" required>
+                        <label for="nation"> Nationality</label>
+                        <input type="text" id="nation" class="nation" name="nation" required>
+                        <label for="phone"> Phone No </label>
+                        <input type="phone" id="phoneno" class="phoneno" name="phoneno"required>
+                        <label for="email"> Email</label>
+                        <input type="text" id="email" class="email" name="email" placeholder="@gmail.com">
+                        <label for="password"> Password </label>
+                        <input type="password" id="password" class="password" name="password" required>
+                        <label for="rpassword">Re-enter </label>
+                        <input type="password" id="rpass" class="rpassword iden" name="rpass" required>
+                        <label for =" myprofilephoto" > Upload Passport </label>
+                        <input type="file" name="myprofilephoto" id="myprofilephoto" required />
+                        <button type="submit" class="buttn1">Sign Up </button>     
+                    </form>
                 </div>
             </div>
         </div>
