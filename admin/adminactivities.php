@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentProfile</title>
     <!-- <link rel="stylesheet" href="css/space.css"> -->
-    
+    <!-- SBPZZ}bPyAiG -->
     <link rel="stylesheet" href="../css/space2.css">
     <link rel="stylesheet" href="admincss/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">

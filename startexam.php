@@ -1,6 +1,7 @@
 <?php
     require_once 'studentsession.php'; 
     require_once 'dbcontroller.php';
+    require_once 'helpers.php';
 
     $db_handle = new DBController();
     $conn = $db_handle->connectDB();
@@ -14,7 +15,7 @@
 
     $questionsQuery ="SELECT exam_questions.id, exam_questions.question, subjects.name FROM exam_questions INNER JOIN subjects ON exam_questions.subject_id = subjects.id WHERE exam_questions.subject_id = {$subjectid} ORDER BY RAND()";
     $result = mysqli_query($conn, $questionsQuery);
-    $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    $rows = mysqli_fetch_all_alt($result);
     
     if(count($rows) < 1) {
         die("There is no ongoing Exam for this subject please try again later");
@@ -36,7 +37,7 @@
     $questionIdstring = implode(',', $questionIds);
     $optionsQuery = "SELECT * FROM exam_question_options WHERE exam_question_id IN ($questionIdstring)";
     $optionsResult = mysqli_query($conn, $optionsQuery);
-    $options = mysqli_fetch_all($optionsResult, MYSQLI_ASSOC);
+    $options = mysqli_fetch_all_alt($optionsResult);
 ?>
 
 <!DOCTYPE html>

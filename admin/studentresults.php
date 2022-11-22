@@ -1,22 +1,19 @@
-<?php require_once 'includes/session.php'; 
+<?php
+    require_once __DIR__  . '/includes/session.php'; 
+    require_once __DIR__  . '/../helpers.php';
+    require_once __DIR__  . '/includes/db.php';
+    
+    $db_handle = new DBController();
+    $conn = $db_handle->connectDB();
 
-require_once __DIR__  . '/includes/db.php';
-   
- 
- $db_handle = new DBController();
- $conn = $db_handle->connectDB();
+    //  $query = "select * from candidates";
+    //  $resultss = mysqli_query($conn,$query);
 
-//  $query = "select * from candidates";
-//  $resultss = mysqli_query($conn,$query);
-
-
-
- $subjectid = $_GET['subject_id'];
- $trial="SELECT candidates.id, candidates.firstname, student_subject.score, subjects.name, (SELECT count(*) FROM exam_questions where exam_questions.subject_id = student_subject.subject_id) as questions_count FROM candidates INNER JOIN student_subject ON candidates.id = student_subject.student_id INNER JOIN subjects ON subjects.id = student_subject.subject_id WHERE student_subject.subject_id = {$subjectid}";
- $result = mysqli_query($conn, $trial);
- $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    $subjectid = $_GET['subject_id'];
+    $trial="SELECT candidates.id, candidates.firstname, student_subject.score, subjects.name, (SELECT count(*) FROM exam_questions where exam_questions.subject_id = student_subject.subject_id) as questions_count FROM candidates INNER JOIN student_subject ON candidates.id = student_subject.student_id INNER JOIN subjects ON subjects.id = student_subject.subject_id WHERE student_subject.subject_id = {$subjectid}";
+    $result = mysqli_query($conn, $trial);
+    $rows = mysqli_fetch_all_alt($result);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
