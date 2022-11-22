@@ -61,56 +61,59 @@ if($scoreResult) {
 
         $mail = new PHPMailer(true);
 
-        $mail->SMTPDebug = 2;   //TO RECEIVE ERROR MESSAGE. YOU CAN COMMENT IT AFTER CODE IS WORKING PROPERLY
-        $mail->isSMTP();
-        $mail->Host = "chiomaxyz.com.ng";    //THIS SHOULD BE YOUR DOMAIN NAME
-        $mail->SMTPAuth = true;    
-        $mail->Username = 'chiomaone@chiomaxyz.com.ng';  //THIS SHOULD BE THE EMAIL YOU CREATED ON YOUR CPANEL
-        $mail->Password = '#NpuW+r]A(4n';    //PASSWORD FOR THE EMAIL YOU CREATED ON YOUR CPANEL
-        $mail->SMTPSecure = 'ssl';
-        $mail->Port = 465;
+        try {
+            $mail->SMTPDebug = 2;   //TO RECEIVE ERROR MESSAGE. YOU CAN COMMENT IT AFTER CODE IS WORKING PROPERLY
+            $mail->isSMTP();
+            $mail->Host = MAIL_HOST;    //THIS SHOULD BE YOUR DOMAIN NAME
+            $mail->SMTPAuth = true;    
+            $mail->Username = MAIL_USERNAME;  //THIS SHOULD BE THE EMAIL YOU CREATED ON YOUR CPANEL
+            $mail->Password = MAIL_PASSWORD;    //PASSWORD FOR THE EMAIL YOU CREATED ON YOUR CPANEL
+            $mail->SMTPSecure = MAIL_TLS;
+            $mail->Port = MAIL_PORT;
 
-        $mail->setFrom('chiomaone@chiomaxyz.com.ng');    //YOUR DOMAIN EMAIL WHICH WOULD BE USED TO SEND AND RECEIVE EMAILS
+            $mail->setFrom(MAIL_FROM);    //YOUR DOMAIN EMAIL WHICH WOULD BE USED TO SEND AND RECEIVE EMAILS
 
-        $mail->addAddress($email);  //RECIPIENT ADDRESS, CAN BE HARD CODED.
+            $mail->addAddress($email);  //RECIPIENT ADDRESS, CAN BE HARD CODED.
 
-        $mail->isHTML(true);
+            $mail->isHTML(true);
 
-        $mail->Subject = "New Horizon Maternity Hospital- New Patient.";    //SUBJECT OF THE EMAIL
+            $mail->Subject = "New Horizon Maternity Hospital- New Patient.";    //SUBJECT OF THE EMAIL
 
-        //THESE ALLOWS THE EMAIL TO APPEAR IN HTML WITH STYLING FORMAT
-        $mail->Headers = array(
-            "MIME-Version" => "1.0",
-            "Content-Type" => "text/html;charset=UTF-8"
-        );
+            //THESE ALLOWS THE EMAIL TO APPEAR IN HTML WITH STYLING FORMAT
+            $mail->Headers = array(
+                "MIME-Version" => "1.0",
+                "Content-Type" => "text/html;charset=UTF-8"
+            );
 
-        // THIS GETS THE EXTERNALLY DESIGNED EMAIL MESSAGE
-        $mail->Body = file_get_contents("message.php");
+            // THIS GETS THE EXTERNALLY DESIGNED EMAIL MESSAGE
+            $mail->Body = file_get_contents("message.php");
 
-        // THIS IS TO GET THE INFORMATION WE WANT TO CHANGE ON THE MESSAGE PAGE AND SWAP THEM WITH THE ONES WE HAVE
-        $swap_var = array(
-            "{student_id}" => "$student_id",
-            "{firstname}" => "$fname",
-            "{surname}" => "$sname",
-            "{score}" => "$score"
-        );
+            // THIS IS TO GET THE INFORMATION WE WANT TO CHANGE ON THE MESSAGE PAGE AND SWAP THEM WITH THE ONES WE HAVE
+            $swap_var = array(
+                "{student_id}" => "$student_id",
+                "{firstname}" => "$fname",
+                "{surname}" => "$sname",
+                "{score}" => "$score"
+            );
 
-        foreach(array_keys($swap_var) as $key){
-            if (strlen($key) > 2 && trim($key) != ""){
-                $mail->Body = str_replace($key, $swap_var[$key], $mail->Body);
+            foreach(array_keys($swap_var) as $key){
+                if (strlen($key) > 2 && trim($key) != ""){
+                    $mail->Body = str_replace($key, $swap_var[$key], $mail->Body);
+                }
             }
+
+            //TO SEND THE EMAIL
+            $mail->send();
+
+            echo
+            "
+                <script>
+                alert('sent');
+                </script>
+            ";
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
-
-        //TO SEND THE EMAIL
-        $mail->send();
-
-
-        echo
-        "
-            <script>
-            alert('sent');
-            </script>
-        ";
     }
 
     header("location:studentexam.php");
