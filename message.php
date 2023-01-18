@@ -39,7 +39,7 @@
 <body>
     <!-- STYLING HAS TO BE INLINE OR INTERNAL FOR IT TO WORK -->
     <div class="wrapper">
-        <h3>New Horizon Maternity Hospital</h3>
+        <h3>National programing web board</h3>
         <p>Thanks for registering with us!</p>
 
         <small>Your ID is : {student_id}</small>
