@@ -1,13 +1,15 @@
 <?php
 
+require_once 'env.php';
+
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 class DBController 
 {
-	private $host = "localhost";
-	private $user = "root";
-	private $password = "";
-	private $database = "nbexam";
+	private $host = DB_HOST;
+	private $user = DB_USER;
+	private $password = DB_PASSWORD;
+	private $database = DB_NAME;
 	private $conn;
 	
 	// Initialize variable
