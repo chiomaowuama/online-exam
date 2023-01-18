@@ -32,11 +32,11 @@
                     <div class="personal_infos">
                         <div class="tag_info">
                             <div class="infor-tags"><p>Firstname </p></div>
-                            <div class="info"><?= $_SESSION["user-data"]['firstname']?></div>
+                            <div class="info move"><?= $_SESSION["user-data"]['firstname']?></div>
                         </div>
                         <div class="tag_info">
                             <div class="infor-tags"><p>Surnname</p></div>
-                            <div class="info"><?= $_SESSION["user-data"]['sname']?></div>
+                            <div class="info move"><?= $_SESSION["user-data"]['sname']?></div>
                         </div>
                         <div class="tag_info">
                             <div class="infor-tags"><p>Phone  No<span class="dot"></span></p></div>
@@ -48,7 +48,7 @@
                         </div>
                         <div class="tag_info">
                             <div class="infor-tags"><p>nationality</p></div>
-                            <div class="info"><?= $_SESSION["user-data"]['nationality']?></div>
+                            <div class="info move"><?= $_SESSION["user-data"]['nationality']?></div>
                         </div>
                         <div class="tag_info">
                             <div class="infor-tags"><p>Email</p></div>
@@ -56,7 +56,7 @@
                         </div>
                         <div class="tag_info"> 
                             <div class="infor-tags"><p>password </p></div>
-                            <div class="info"><?= $_SESSION["user-data"]['password']?></div>
+                            <div class="info move"><?= $_SESSION["user-data"]['password']?></div>
                         </div>
                     </div>
                </div>

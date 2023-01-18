@@ -14,7 +14,7 @@
         </div>
         <div class="formsec">
             <form class="form1" name="signup" action="../actions/savecandidates.php" method="post" enctype="multipart/form-data" >
-                <h3>student sign in</h3>
+                <h3>student signin</h3>
                 <label for="fname" > Firstname </label>
                 <input type="text" id="fname" class="fname" name="fname" required>
                 <label for="sname"> Lastname </label>

@@ -415,6 +415,7 @@ aside ul li:target:hover{
 }
 .table{
     border:2px solid rgba(209, 206, 206, 0.658);
+     /* border:2px solid green; */
     width:100%
   
 }
@@ -450,8 +451,37 @@ td{
 .view{
     border:2px solid  rgba(209, 206, 206, 0.658);
     font-size: 15px;
-    font-weight: 600;
+    font-weight:600;
   
+}
+.viewbtn{
+    background-color: green;
+    padding:5px 10px;
+    width:100px;
+    border-radius:4px ;
+    border:none;
+    cursor: pointer;
+    color:whitesmoke;
+    font-size: 15px;
+    font-weight:100px;
+    font-weight: bold;
+    outline:none;
+    text-decoration: none;
+
+}
+.viewbtn a{
+    color:white;
+    outline:none;
+    text-decoration: none;
+}
+.viewbtn a:hover{
+    color:green;
+}
+.viewbtn:hover{
+    transform: translateY(2px);
+    box-shadow: 1px 3px 8px 3px #888888;
+    background-color: white;
+    color:green;
 }
 .details{
     border:2px solid  rgba(209, 206, 206, 0.658) ;
@@ -518,7 +548,7 @@ td{
     font-size: 20px;
     font-weight:400px;
     font-weight: bold;
-    padding:6px px;
+    padding:6px 5px;
     width: 30%;
     border-radius:4px ;
     border:none;
@@ -636,6 +666,101 @@ td{
     .topfix_left p {
         margin-left:10px ;
     }
+
+
+
+    aside{
+        min-height: 710px;
+        background:green;
+       
+    }
+    aside h1 img{
+        width:51px;
+        float:left;
+    }
+    aside h1 span{
+        font-size: 30px;
+        line-height: 50px;
+        margin-left: 6px;
+        color:white
+    }
+    aside ul{
+        padding:5px 0 5px 10px;
+    }
+    aside ul li{
+        list-style:none;
+        font-weight: bold;
+        margin: 20px auto;
+        position: relative;
+        overflow: hidden;
+        max-height: 35px;
+        line-height: 35px;
+        transition:1s;
+        text-transform: capitalize;
+    }
+    aside ul:first-child li{
+        max-height: 50px;
+    
+    }
+    aside ul li:hover{
+        background-color: #d1d1d173;
+    }
+    aside ul:first-child li:hover{
+        background: none;
+    }
+    aside ul li a{
+        text-decoration: none;
+        color: whitesmoke;
+    }
+    aside ul li a i{
+        width:30px;
+        padding:5px;
+        margin-right: 10px;
+    }
+    
+    aside ul li a i.fa-angle-right{
+        position: absolute;
+        right:0;
+        top:5px;
+        transition: 0.5s;
+    }
+    aside ul li>ul{
+        padding: 1px;
+        margin: 0 0 0 0px;
+    }
+    aside ul li>ul li{
+        height:25px;
+        line-height: 20px;
+        font-size: 13px;
+        padding:1px 1px 1px 20px;
+        font-weight: normal;
+        border-left: 1px solid #fff0f0;
+        margin:5px;
+        color:#fff0f0;
+        cursor:pointer;
+    }
+    aside ul li>ul li a,
+    aside ul li:target>ul li a{
+        background:transparent ;
+      
+    }
+    
+    aside ul li:target{
+        max-height: 300px;
+        border-radius: 5px 0px 0px 5px;
+    }
+    aside ul li:target a{
+        color:#444;
+        display:inherit;
+        background: white;
+    }
+    aside ul li:target a i fa-angle-right{
+        transform: rotate(90deg);
+        top:10px;
+    }
+    aside ul li:target:hover{
+        background: initial;
+    }
     
     .star{
         width:50px ;
@@ -743,23 +868,24 @@ td{
     /* table for class */
     .tablediv{
         /* border:2px solid green; */
-        width:90%;
+        width:80%;
         margin-left: 5%;
         margin-right: 5%;
         margin-top: 5%;
         margin-bottom: 5%;
     }
     .table{
-        border:2px solid rgba(209, 206, 206, 0.658);
+        /* border:2px solid rgba(209, 206, 206, 0.658); */
         width:100%;
+        /* border:2px solid red; */
         /* border:2px solid blue; */
       
     }
     .thead{
-        border:2px solid rgba(209, 206, 206, 0.658);
+        /* border:2px solid rgba(209, 206, 206, 0.658); */
     }
     .table_title{
-        border:2px solid  rgba(209, 206, 206, 0.658) ;
+        /* border:2px solid  rgba(209, 206, 206, 0.658) ; */
         padding:5px 0px;
         font-size: 12px;
         font-family: "poppins";
@@ -768,7 +894,7 @@ td{
      
     }
     .table_head{
-        border:2px solid  rgba(209, 206, 206, 0.658) ;
+        /* border:2px solid  rgba(209, 206, 206, 0.658) ; */
        
     }
     table,
@@ -790,6 +916,35 @@ td{
         font-size: 7px;
         font-weight: 600;
       
+    }
+    .viewbtn{
+        background-color: green;
+        padding:5px 10px;
+        width:30px;
+        border-radius:4px ;
+        border:none;
+        cursor: pointer;
+        color:whitesmoke;
+        font-size: 5px;
+        font-weight:150px;
+        font-weight: bold;
+        outline:none;
+        text-decoration: none;
+    
+    }
+    .viewbtn a{
+        color:white;
+        outline:none;
+        text-decoration: none;
+    }
+    .viewbtn a:hover{
+        color:green;
+    }
+    .viewbtn:hover{
+        transform: translateY(2px);
+        box-shadow: 1px 3px 8px 3px #888888;
+        background-color: white;
+        color:green;
     }
     .details{
         border:2px solid  rgba(209, 206, 206, 0.658) ;
@@ -959,4 +1114,31 @@ td{
 
   }
 
+}
+@media  screen and (min-width:820px) and (max-width:1180px){
+
+    .newdesign{
+        width:90%;
+        height: 1010px;
+        margin: 25px auto;
+        background:white;
+        border-radius: 5px;
+        overflow: hidden;
+        display:grid;
+        grid-template-columns: 25% 75%;
+        box-shadow: 1px 3px 8px 3px #888888;
+        /* border:2px solid green; */
+    
+    }
+    aside{
+        min-height: 1010px;
+        background:green;
+       
+    }
+    .scroll{
+        height:1000px;
+        overflow:auto;
+    }
+   
+  
 }

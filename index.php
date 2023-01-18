@@ -12,7 +12,7 @@
         <form class="form2" name="signup" action="loginscript.php"  method="POST">
             <div class="logostyle">
                 <img src="./img/logonew.png" alt="i am here" class="logo">
-                <h3> Sign in </h3>
+                <h3>Student Sign in </h3>
             </div>
             <label for="registration"> Reg no: </label>
             <input type="text" id="registration" class="registration" name="regno" required>

@@ -54,7 +54,7 @@
                         <td class="details"><?php echo $row['duration']; ?></td>
                         <td class="details"><?php echo $row['questions_count']; ?></td>
                         <td class="details">
-                            <button class="submited"><a href="startexam.php?subject_id=<?php echo $row['id'] ?>">start</a></button>
+                            <button class="submited"><a href="startexam.php?subject_id=<?php echo $row['id'] ?>" onclick="startExam(this); return false;">start</a></button>
                         </td>
                         </tr>
                         <?php 
@@ -65,5 +65,16 @@
             <div>
         </div>
     </div>
+
+    <script>
+        function startExam(e) {
+            e.onclick = function(event) {
+                if (!confirm("ONCE YOU START YOUR EXAM YOU CAN NOT USE GO BACK!!!")) {
+                    event.preventDefault(); 
+                }
+                return true;
+            }
+        }
+    </script>   
 </body>
 </html>

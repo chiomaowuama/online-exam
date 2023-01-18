@@ -75,7 +75,7 @@
 
                         <div class="questions_display">
                             <div class="questions">
-                                <p>' . $row["question"] . '</p>
+                                <p class="quest">' . $row["question"] . '</p>
                             </div>
                             <div class="options_answers">';
                                 $questionOptions = array_filter($options, function($option) use ($row) {

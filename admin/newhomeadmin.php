@@ -77,7 +77,7 @@ require_once __DIR__  . '/includes/db.php';
                     <thead >
                         <tr>
                             <th colspan="5" class="table_title"> <p class="registered">Registered students </p></th>
-                            <th class="view"><a href="">View All</a> </th>
+                            <th class="view"><button class="viewbtn"><a href="#">View All</a><button> </th>
                             
                         </tr>
                     </thead>
@@ -116,7 +116,7 @@ require_once __DIR__  . '/includes/db.php';
                     <thead >
                         <tr>
                             <th colspan="4" class="table_title"> <p class="registered">Registered Admin </p></th>
-                            <th class="view"><a href="">View All</a> </th>
+                            <th class="view"><button class="viewbtn"><a href="">View All</a></button> </th>
                             
                         </tr>
                     </thead>

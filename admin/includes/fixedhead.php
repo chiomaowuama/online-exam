@@ -3,7 +3,7 @@
                 <div class="topfix">
                     <div class="topfix_left">
                         <i class="fa-solid fa-moon"></i>
-                        <p>nationality</p>
+                        <p>Nationality</p>
                     </div>
                     <div class="topfix_right">
                         <!-- <img src="adminimgs/side.jpg" alt="" class="pics"> -->

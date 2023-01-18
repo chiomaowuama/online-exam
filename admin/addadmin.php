@@ -24,7 +24,7 @@
                 <div class="subject2a">
                 <form class="form2" name="signup" action="actions/saveadmin.php" method="post" enctype="multipart/form-data" >
                 <div class="adminh">
-                    <h3>ADD NEW ADMINS</h3>
+                    <h3>Add New Admin</h3>
                 </div>
                 <div class="formstyle">
                     <div class="styleform">
@@ -65,7 +65,7 @@
                         <input type="file" name="mgtpassport" id="passport" required />
                     </div>
                 </div>
-                <button type="submit" class="buttn1">Sign Up </button>     
+                <button type="submit" class="buttn1">Add</button>     
                  </form>
                 </div>
             </div>

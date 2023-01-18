@@ -62,7 +62,7 @@ if($scoreResult) {
         $mail = new PHPMailer(true);
 
         try {
-            $mail->SMTPDebug = 2;   //TO RECEIVE ERROR MESSAGE. YOU CAN COMMENT IT AFTER CODE IS WORKING PROPERLY
+            $mail->SMTPDebug = 0;   //TO RECEIVE ERROR MESSAGE. YOU CAN COMMENT IT AFTER CODE IS WORKING PROPERLY
             $mail->isSMTP();
             $mail->Host = MAIL_HOST;    //THIS SHOULD BE YOUR DOMAIN NAME
             $mail->SMTPAuth = true;    

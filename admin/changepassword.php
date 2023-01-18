@@ -21,14 +21,14 @@
             <div class="subject1">
                 <div class="subject2a">
                     <form class="form1" name="signup" action=" actions/changepasswordscript.php" method="post" >
-                        <h3>Student Sign in</h3>
-                        <label for="oldpassword" > old password  </label>
+                        <h3>Change Password</h3>
+                        <label for="oldpassword" > Old password  </label>
                         <input type="password" id="oldpassword" class="fname" name="oldpassword" required>
-                        <label for="newpassword"> newpassword </label>
+                        <label for="newpassword"> New password </label>
                         <input type="password" id="newpassword" class="sname" name="newpassword" required>
-                        <label for="Rnewpassword"> confirm password </label>
+                        <label for="Rnewpassword"> Confirm password </label>
                         <input type="password" id="Rnewpassword" class="gender" name="Rnewpassword" required>'
-                        <button type="submit" class="buttn1">Submit</button>     
+                        <button type="submit" class="buttn1">Change</button>     
                     </form>
                 </div>
             </div>
