@@ -1,5 +1,5 @@
 <?php
-    require_once 'enviroment.php';
+    require_once 'environment.php';
     require_once __DIR__  . '/../includes/session.php'; 
     require_once __DIR__  . '/../includes/db.php';
     
